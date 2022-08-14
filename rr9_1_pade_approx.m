@@ -1,0 +1,52 @@
+% n = 1
+figure(1);
+num = [-0.5 1];
+f_n = 1 - roots(num) / 1 + roots(num);
+denom = [0.5 1];
+f_d = 1 - roots(denom) / 1 + roots(denom);
+hold on;
+title("1st Order Pade Approximation");
+ylabel("F(s)");
+xlabel("ds");
+plot(roots(num), f_n, 'o');
+plot(roots(denom), f_d, 'X');
+hold off;
+% n = 2
+figure(2);
+num = [1/12 -0.5 1];
+f_n = 1 - roots(num) / 1 + roots(num);
+denom = [1/12 0.5 1];
+f_d = 1 - roots(denom) / 1 + roots(denom);
+hold on;
+title("2nd Order Pade Approximation");
+ylabel("F(s)");
+xlabel("ds");
+plot(roots(num), f_n, 'o');
+plot(roots(denom), f_d, 'X');
+hold off;
+% n = 4
+figure(3);
+num = [1/1680 -1/84 3/28 -0.5 1];
+f_n = 1 - roots(num) / 1 + roots(num);
+denom = [1/1680 1/84 3/28 0.5 1];
+f_d = 1 - roots(denom) / 1 + roots(denom);
+hold on;
+title("4th Order Pade Approximation");
+ylabel("F(s)");
+xlabel("ds");
+plot(roots(num), f_n, 'o');
+plot(roots(denom), f_d, 'X');
+hold off;
+% n = 8
+figure(4);
+num = [1 -0.5 3/35 -1/60 1/624 -1/9360 1/205920 -1/7207200 1/518918400];
+f_n = 1 - roots(num) / 1 + roots(num);
+denom = [1 0.5 3/35 1/60 1/624 1/9360 1/205920 1/7207200 1/518918400];
+f_d = 1 - roots(denom) / 1 + roots(denom);
+hold on;
+title("8th Order Pade Approximation");
+ylabel("F(s)");
+xlabel("ds");
+plot(roots(num), f_n, 'o');
+plot(roots(denom), f_d, 'X');
+hold off;
